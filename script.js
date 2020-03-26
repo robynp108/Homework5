@@ -1,6 +1,4 @@
-var d = new Date();
-document.getElementById("currentDay").textContent = d;
-
+document.getElementById("currentDay").textContent = moment().format("dddd, MMMM Do YYYY");
 
 var inputIDs = ["#input-9", "#input-10", "#input-11", "#input-12", "#input-1", "#input-2", "#input-3", "#input-4", "#input-5"];
 
@@ -11,7 +9,7 @@ for (var i = 0; i < inputIDs.length; i++) {
 
 //event handler for submit button with storage of input
 
-$(".saveButton").on("click", function () {
+$(".saveBtn").on("click", function () {
 
     for (var i = 0; i < inputIDs.length; i++) {
         var inputID = inputIDs[i];
@@ -20,4 +18,23 @@ $(".saveButton").on("click", function () {
     }
 
 })
+
+var now = moment().format("H");
+//console.log(now);
+now = 13;
+//console.log($(".input").data().time);
+
+$( ".input" ).each(function( index ) {
+    var inputEl = $(this);
+    console.log(inputEl);
+    if (inputEl.data().time < now) {
+        inputEl.addClass("past");
+    };
+    if (inputEl.data().time === now) {
+        inputEl.addClass("present");
+    };
+    if (inputEl.data().time > now) {
+        inputEl.addClass("future");
+    };
+  });
 
