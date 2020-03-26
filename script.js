@@ -20,21 +20,18 @@ $(".saveBtn").on("click", function () {
 })
 
 var now = moment().format("H");
-//console.log(now);
-now = 10;
-//console.log($(".input").data().time);
 
-$( ".input" ).each(function( index ) {
+$(".input").each(function () {
     var inputEl = $(this);
     console.log(inputEl);
     if (inputEl.data().time < now) {
         inputEl.addClass("past");
     };
-    if (inputEl.data().time === now) {
+    if (inputEl.data().time == now) {
         inputEl.addClass("present");
     };
     if (inputEl.data().time > now) {
         inputEl.addClass("future");
     };
-  });
+});
 
