@@ -21,7 +21,7 @@ $(".saveBtn").on("click", function () {
 
 var now = moment().format("H");
 //console.log(now);
-now = 13;
+now = 10;
 //console.log($(".input").data().time);
 
 $( ".input" ).each(function( index ) {
